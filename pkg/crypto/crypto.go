@@ -232,7 +232,6 @@ func (a *Analyzer) AnalyzeAlgorithm(algorithm string) *CryptoAlgorithm {
 	matches := re.FindStringSubmatch(algorithm)
 
 	if len(matches) >= 2 {
-		algName := matches[1]
 		keySize := 0
 		if len(matches) >= 3 && matches[2] != "" {
 			keySize = parseInt(matches[2])

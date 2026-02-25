@@ -63,7 +63,7 @@ Examples:
   quantumsec assess "RSA-2048,AES-256,SHA-256"
   quantumsec analyze "Kyber-768,Dilithium-2"
   quantumsec check RSA-2048
-`, "quantumsec")
+`,)
 }
 
 func assessSecurity(algs []string) {
@@ -126,7 +126,7 @@ func showTimeline() {
 	fmt.Println()
 
 	analyzer := analyze.NewAnalyzer()
-	for _, timeline := range analyzer.quantumTimeline {
+	for _, timeline := range analyzer.GetTimeline() {
 		fmt.Printf("%ds:\n", timeline.Year)
 		fmt.Printf("  Threat Level: %s\n", timeline.ThreatLevel)
 		fmt.Printf("  %s\n", timeline.Description)

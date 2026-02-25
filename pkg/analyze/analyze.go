@@ -172,3 +172,7 @@ func GetRiskLevel(score float64) RiskLevel {
 	}
 	return RiskMinimal
 }
+// GetTimeline returns the quantum timeline for analysis.
+func (a *Analyzer) GetTimeline() []Timeline {
+	return a.quantumTimeline
+}

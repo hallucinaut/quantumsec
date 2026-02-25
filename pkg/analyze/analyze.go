@@ -2,6 +2,7 @@
 package analyze
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -139,7 +140,7 @@ func GenerateReport(result *AnalysisResult) string {
 
 	report += "=== Quantum Security Analysis Report ===\n\n"
 	report += "Analysis Date: " + result.AnalysisDate.Format("2006-01-02 15:04:05") + "\n"
-	report += "Risk Score: " + string(rune(int(result.RiskScore)+48)) + "%\n"
+	report += "Risk Score: " + fmt.Sprintf("%.0f%%", result.RiskScore) + "%\n"
 	report += "Risk Level: " + string(result.RiskLevel) + "\n"
 	report += "Quantum Readiness: " + result.QuantumReadiness + "\n\n"
 
